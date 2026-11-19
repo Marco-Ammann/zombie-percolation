@@ -32,4 +32,16 @@ Hier halte ich fest, was ich wann entschieden habe und warum. Kurz, damit ich sp
 
 **Was:** Als Linter nehme ich ESLint.
 **Warum:** ESLint ist Standard in den meisten Projekten und Tutorials, ich finde also mehr Hilfe dazu.
-**Alternative:** Oxlint (schneller, aber neuer und weniger verbreitet).
+**Alternative:** Oxlint (schneller, aber neuer und weniger verbreitet laut internet).
+
+## E-06: Zombies "sterben" ohne Menschen in der Nähe (19.11.2026)
+
+**Was:** Ein Zombie, der keine Menschen mehr als Nachbarn hat, wird zu einem toten Zombie (vierter Zustand).
+**Warum:** Sieht besser aus, weil nur die Front leuchtet und dahinter alles verlöscht. Am Ergebnis der Ausbreitung ändert es nichts.
+**Alternative:** Zombies bleiben einfach Zombies (nur drei Zustände).
+
+## E-07: Starre Zombies mit 4 Nachbarn (19.11.2026)
+
+**Was:** Zombies bewegen sich nicht und stecken nur oben, unten, links und rechts an.
+**Warum:** Nur so ist es echte Perkolation und die Schwelle liegt bei ca. 59 %. Mit Diagonalen wären es ca. 41 %, und laufende Zombies würden leere Zellen einfach überqueren, dann gibt es gar keine Schwelle mehr.
+**Alternative:** 8 Nachbarn oder laufende Zombies, beides geparkt als Idee für später.
