@@ -1,75 +1,41 @@
-# React + TypeScript + Vite
+# Zombie Percolation 🧟
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Eine interaktive Simulation, in der sich eine "Zombieapokalypse" über ein Raster ausbreitet. Jede Zelle ist entweder leer oder von einem Menschen bewohnt. Irgendwo sitzt Patient 0, und ab da steckt jeder Zombie seine bewohnten Nachbarn an, Schritt für Schritt.
 
-Currently, two official plugins are available:
+Dahinter steckt eigentlich Perkolation (also wie sich z.B. Wasser durch ein poröses Material "durchfrisst"). Die Theorie sagt, dass ab ca. 59 % Bevölkerungsdichte der Ausbruch plötzlich das ganze Raster erreicht. Das will ich mit eigenen Daten nachweisen.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Warum dieses Projekt?
 
-## React Compiler
+Das Projekt ist Teil meiner Tech-Orientierung (Fullstack-Roadmap). Ich will damit meine Lücken bei React, automatisierten Tests, Backend und SQL schliessen und wieder sicherer werden, selbstständig Code zu schreiben (ohne KI für den Code).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech-Stack
 
-## Expanding the ESLint configuration
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- pnpm
+- später: kleines Node-Backend + PostgreSQL, um Experimente zu speichern und auszuwerten
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+## Starten
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm install
+pnpm dev
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+Danach im Browser http://localhost:5173 öffnen.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Stand
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- [x] Projekt aufgesetzt (Vite, React, TypeScript, Tailwind)
+- [ ] Raster erzeugen
+- [ ] Ausbreitung Schritt für Schritt
+- [ ] Raster anzeigen und steuern (Dichte, Grösse, Tempo, Patient 0)
+- [ ] Optik "Nachtkarte"
+- [ ] Tests (Unit, Komponenten, End-to-End)
+- [ ] Backend + Datenbank für Experimente
+- [ ] Auswertung der 59 %-Schwelle
 
-```
+## Inspiration
+
+Der Rasteransatz stammt aus dem Projekt "Game of Life" von Robert Heaton (Programming Projects for Advanced Beginners #2).
