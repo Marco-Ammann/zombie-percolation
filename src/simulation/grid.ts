@@ -1,4 +1,4 @@
-export type Cell = 'empty' | 'zombie' | 'human';
+export type Cell = 'empty' | 'zombie' | 'human' | 'dead';
 export type Grid = Cell[][];
 
 export function createGrid(rows: number, cols: number, density: number): Grid {
@@ -23,6 +23,15 @@ export function infect(grid: Grid, row: number, col: number): Grid {
   // checks if cell is empty. if cell is empty try another cell
   // set a zombie at row/col
   // return a NEW grid (infectedGrid), do not change the old one
+  return grid.map((r, rIndex) => r.map((cell, cIndex) => {
+    if (rIndex === row && cIndex === col) {
+      if (cell === 'human') {
+        throw new Error('Cannot infect a human cell directly.');
+      }
+      return 'zombie';
+    }
+    return cell;
+  }
 }
 
 export function nextBoardState(grid: Grid): Grid {
